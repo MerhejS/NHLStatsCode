@@ -1,0 +1,526 @@
+data = read.csv("/Users/mac/Documents/Wordpress/StatsNHL/ALLDATA.csv", header = TRUE)
+#just the ind. var.:
+IDATA = data(,2:length(data))
+
+> for(i in 1:length(IDATA)){
++ model = lm(data[,1] ~ IDATA[,i])
++ print(i)
++ print(summary(model))
++ }
+[1] 1
+
+Call:
+lm(formula = data[, 1] ~ IDATA[, i])
+
+Residuals:
+     Min       1Q   Median       3Q      Max
+-0.55534 -0.49570 -0.02281  0.50430  0.53683
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)
+(Intercept) 0.414367   0.157234   2.635  0.00923 **
+IDATA[, i]  0.002711   0.004818   0.563  0.57446
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.5026 on 160 degrees of freedom
+Multiple R-squared:  0.001975,	Adjusted R-squared:  -0.004263
+F-statistic: 0.3166 on 1 and 160 DF,  p-value: 0.5745
+
+[1] 2
+
+Call:
+lm(formula = data[, 1] ~ IDATA[, i])
+
+Residuals:
+     Min       1Q   Median       3Q      Max
+-0.53683 -0.50430  0.02281  0.49570  0.55534
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)
+(Intercept)  0.585633   0.157234   3.725 0.000271 ***
+IDATA[, i]  -0.002711   0.004818  -0.563 0.574456
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.5026 on 160 degrees of freedom
+Multiple R-squared:  0.001975,	Adjusted R-squared:  -0.004263
+F-statistic: 0.3166 on 1 and 160 DF,  p-value: 0.5745
+
+[1] 3
+
+Call:
+lm(formula = data[, 1] ~ IDATA[, i])
+
+Residuals:
+    Min      1Q  Median      3Q     Max
+-0.5836 -0.4992  0.0000  0.4992  0.5836
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)
+(Intercept) 0.500000   0.039436  12.679   <2e-16 ***
+IDATA[, i]  0.003215   0.003705   0.868    0.387
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.5019 on 160 degrees of freedom
+Multiple R-squared:  0.004683,	Adjusted R-squared:  -0.001538
+F-statistic: 0.7528 on 1 and 160 DF,  p-value: 0.3869
+
+[1] 4
+
+Call:
+lm(formula = data[, 1] ~ IDATA[, i])
+
+Residuals:
+    Min      1Q  Median      3Q     Max
+-0.8074 -0.4339 -0.1829  0.5661  0.5661
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)
+(Intercept)  0.43390    0.04785   9.068 4.18e-16 ***
+IDATA[, i]   0.12451    0.05261   2.366   0.0192 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4945 on 160 degrees of freedom
+Multiple R-squared:  0.03382,	Adjusted R-squared:  0.02778
+F-statistic:   5.6 on 1 and 160 DF,  p-value: 0.01915
+
+[1] 5
+
+Call:
+lm(formula = data[, 1] ~ IDATA[, i])
+
+Residuals:
+     Min       1Q   Median       3Q      Max
+-0.59869 -0.49620 -0.03037  0.50380  0.60628
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)
+(Intercept)  0.39372    0.09532   4.130 5.82e-05 ***
+IDATA[, i]   0.03416    0.02791   1.224    0.223
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.5008 on 160 degrees of freedom
+Multiple R-squared:  0.009278,	Adjusted R-squared:  0.003086
+F-statistic: 1.498 on 1 and 160 DF,  p-value: 0.2227
+
+[1] 6
+
+Call:
+lm(formula = data[, 1] ~ IDATA[, i])
+
+Residuals:
+    Min      1Q  Median      3Q     Max
+-0.6719 -0.4368 -0.1327  0.5632  0.5632
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)
+(Intercept) 0.436807   0.047653   9.166 2.29e-16 ***
+IDATA[, i]  0.003918   0.001707   2.295    0.023 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.495 on 160 degrees of freedom
+Multiple R-squared:  0.03187,	Adjusted R-squared:  0.02582
+F-statistic: 5.268 on 1 and 160 DF,  p-value: 0.02302
+
+[1] 7
+
+Call:
+lm(formula = data[, 1] ~ IDATA[, i])
+
+Residuals:
+     Min       1Q   Median       3Q      Max
+-0.60628 -0.50380  0.03037  0.49620  0.59869
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)
+(Intercept)  0.60628    0.09532   6.360 2.02e-09 ***
+IDATA[, i]  -0.03416    0.02791  -1.224    0.223
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.5008 on 160 degrees of freedom
+Multiple R-squared:  0.009278,	Adjusted R-squared:  0.003086
+F-statistic: 1.498 on 1 and 160 DF,  p-value: 0.2227
+
+[1] 8
+
+Call:
+lm(formula = data[, 1] ~ IDATA[, i])
+
+Residuals:
+    Min      1Q  Median      3Q     Max
+-0.5661 -0.5661  0.1829  0.4339  0.8074
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)
+(Intercept)  0.56610    0.04785  11.830   <2e-16 ***
+IDATA[, i]  -0.12451    0.05261  -2.366   0.0192 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4945 on 160 degrees of freedom
+Multiple R-squared:  0.03382,	Adjusted R-squared:  0.02778
+F-statistic:   5.6 on 1 and 160 DF,  p-value: 0.01915
+
+[1] 9
+
+Call:
+lm(formula = data[, 1] ~ IDATA[, i])
+
+Residuals:
+     Min       1Q   Median       3Q      Max
+-0.54839 -0.53695  0.08616  0.45161  0.72070
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)
+(Intercept) 0.279297   0.132750   2.104   0.0369 *
+IDATA[, i]  0.002691   0.001547   1.740   0.0838 .
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4984 on 160 degrees of freedom
+Multiple R-squared:  0.01857,	Adjusted R-squared:  0.01244
+F-statistic: 3.027 on 1 and 160 DF,  p-value: 0.08379
+
+[1] 10
+
+Call:
+lm(formula = data[, 1] ~ IDATA[, i])
+
+Residuals:
+     Min       1Q   Median       3Q      Max
+-0.59261 -0.49263 -0.04556  0.50149  0.57206
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)
+(Intercept) 0.310312   0.178863   1.735   0.0847 .
+IDATA[, i]  0.005881   0.005410   1.087   0.2786
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.5013 on 160 degrees of freedom
+Multiple R-squared:  0.007333,	Adjusted R-squared:  0.001129
+F-statistic: 1.182 on 1 and 160 DF,  p-value: 0.2786
+
+[1] 11
+
+Call:
+lm(formula = data[, 1] ~ IDATA[, i])
+
+Residuals:
+     Min       1Q   Median       3Q      Max
+-0.57206 -0.50149  0.04556  0.49263  0.59261
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)
+(Intercept)  0.689688   0.178863   3.856 0.000167 ***
+IDATA[, i]  -0.005881   0.005410  -1.087 0.278582
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.5013 on 160 degrees of freedom
+Multiple R-squared:  0.007333,	Adjusted R-squared:  0.001129
+F-statistic: 1.182 on 1 and 160 DF,  p-value: 0.2786
+
+[1] 12
+
+Call:
+lm(formula = data[, 1] ~ IDATA[, i])
+
+Residuals:
+     Min       1Q   Median       3Q      Max
+-0.62139 -0.49098  0.00032  0.48945  0.62204
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)
+(Intercept) 0.064986   0.273515   0.238    0.812
+IDATA[, i]  0.008694   0.005410   1.607    0.110
+
+Residual standard error: 0.4991 on 160 degrees of freedom
+Multiple R-squared:  0.01589,	Adjusted R-squared:  0.009734
+F-statistic: 2.583 on 1 and 160 DF,  p-value: 0.11
+
+[1] 13
+
+Call:
+lm(formula = data[, 1] ~ IDATA[, i])
+
+Residuals:
+   Min     1Q Median     3Q    Max
+  -0.5   -0.5    0.0    0.5    0.5
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)
+(Intercept)  5.000e-01  2.367e-01   2.112   0.0362 *
+IDATA[, i]  -1.717e-17  3.618e-03   0.000   1.0000
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.5031 on 160 degrees of freedom
+Multiple R-squared:  3.419e-30,	Adjusted R-squared:  -0.00625
+F-statistic: 5.47e-28 on 1 and 160 DF,  p-value: 1
+
+[1] 14
+
+Call:
+lm(formula = data[, 1] ~ IDATA[, i])
+
+Residuals:
+     Min       1Q   Median       3Q      Max
+-0.57151 -0.49683 -0.01675  0.50317  0.58281
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)
+(Intercept) 0.367405   0.167726   2.191   0.0299 *
+IDATA[, i]  0.004978   0.006120   0.813   0.4172
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.5021 on 160 degrees of freedom
+Multiple R-squared:  0.004118,	Adjusted R-squared:  -0.002107
+F-statistic: 0.6616 on 1 and 160 DF,  p-value: 0.4172
+
+[1] 15
+
+Call:
+lm(formula = data[, 1] ~ IDATA[, i])
+
+Residuals:
+     Min       1Q   Median       3Q      Max
+-0.58281 -0.50317  0.01675  0.49683  0.57151
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)
+(Intercept)  0.632595   0.167726   3.772 0.000228 ***
+IDATA[, i]  -0.004978   0.006120  -0.813 0.417222
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.5021 on 160 degrees of freedom
+Multiple R-squared:  0.004118,	Adjusted R-squared:  -0.002107
+F-statistic: 0.6616 on 1 and 160 DF,  p-value: 0.4172
+
+[1] 16
+
+Call:
+lm(formula = data[, 1] ~ IDATA[, i])
+
+Residuals:
+     Min       1Q   Median       3Q      Max
+-0.67793 -0.47141 -0.04517  0.49909  0.58760
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)
+(Intercept)  0.41240    0.06858   6.014 1.19e-08 ***
+IDATA[, i]   0.02950    0.01894   1.557    0.121
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4993 on 160 degrees of freedom
+Multiple R-squared:  0.01493,	Adjusted R-squared:  0.008777
+F-statistic: 2.426 on 1 and 160 DF,  p-value: 0.1213
+
+[1] 17
+
+Call:
+lm(formula = data[, 1] ~ IDATA[, i])
+
+Residuals:
+     Min       1Q   Median       3Q      Max
+-0.53138 -0.49620 -0.00499  0.50380  0.51553
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)
+(Intercept) 0.484473   0.067334   7.195 2.28e-11 ***
+IDATA[, i]  0.005863   0.020587   0.285    0.776
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.503 on 160 degrees of freedom
+Multiple R-squared:  0.0005067,	Adjusted R-squared:  -0.00574
+F-statistic: 0.08111 on 1 and 160 DF,  p-value: 0.7762
+
+[1] 18
+
+Call:
+lm(formula = data[, 1] ~ IDATA[, i])
+
+Residuals:
+     Min       1Q   Median       3Q      Max
+-0.51553 -0.50380  0.00499  0.49620  0.53138
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)
+(Intercept)  0.515527   0.067334   7.656 1.71e-12 ***
+IDATA[, i]  -0.005863   0.020587  -0.285    0.776
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.503 on 160 degrees of freedom
+Multiple R-squared:  0.0005067,	Adjusted R-squared:  -0.00574
+F-statistic: 0.08111 on 1 and 160 DF,  p-value: 0.7762
+
+[1] 19
+
+Call:
+lm(formula = data[, 1] ~ IDATA[, i])
+
+Residuals:
+     Min       1Q   Median       3Q      Max
+-0.58760 -0.49909  0.04517  0.47141  0.67793
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)
+(Intercept)  0.58760    0.06858   8.569 8.38e-15 ***
+IDATA[, i]  -0.02950    0.01894  -1.557    0.121
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4993 on 160 degrees of freedom
+Multiple R-squared:  0.01493,	Adjusted R-squared:  0.008777
+F-statistic: 2.426 on 1 and 160 DF,  p-value: 0.1213
+
+[1] 20
+
+Call:
+lm(formula = data[, 1] ~ IDATA[, i])
+
+Residuals:
+     Min       1Q   Median       3Q      Max
+-0.61846 -0.50403  0.05107  0.48891  0.62453
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)
+(Intercept)  0.691929   0.136010   5.087 1.01e-06 ***
+IDATA[, i]  -0.005651   0.003834  -1.474    0.142
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4997 on 160 degrees of freedom
+Multiple R-squared:  0.0134,	Adjusted R-squared:  0.007229
+F-statistic: 2.172 on 1 and 160 DF,  p-value: 0.1425
+
+[1] 21
+
+Call:
+lm(formula = data[, 1] ~ IDATA[, i])
+
+Residuals:
+     Min       1Q   Median       3Q      Max
+-0.73771 -0.48572 -0.02581  0.48851  0.61737
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)
+(Intercept) 0.302452   0.119818   2.524   0.0126 *
+IDATA[, i]  0.011454   0.006566   1.745   0.0830 .
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4984 on 160 degrees of freedom
+Multiple R-squared:  0.01867,	Adjusted R-squared:  0.01253
+F-statistic: 3.043 on 1 and 160 DF,  p-value: 0.08299
+
+[1] 22
+
+Call:
+lm(formula = data[, 1] ~ IDATA[, i])
+
+Residuals:
+     Min       1Q   Median       3Q      Max
+-0.51115 -0.50070  0.00401  0.50009  0.51707
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)
+(Intercept)  0.512195   0.086969   5.889 2.21e-08 ***
+IDATA[, i]  -0.001045   0.006640  -0.157    0.875
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.5031 on 160 degrees of freedom
+Multiple R-squared:  0.0001549,	Adjusted R-squared:  -0.006094
+F-statistic: 0.02478 on 1 and 160 DF,  p-value: 0.8751
+
+[1] 23
+
+Call:
+lm(formula = data[, 1] ~ IDATA[, i])
+
+Residuals:
+     Min       1Q   Median       3Q      Max
+-0.75254 -0.48427 -0.06251  0.51573  0.62751
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)
+(Intercept)  0.32777    0.09049   3.622 0.000392 ***
+IDATA[, i]   0.02236    0.01060   2.109 0.036498 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4963 on 160 degrees of freedom
+Multiple R-squared:  0.02705,	Adjusted R-squared:  0.02097
+F-statistic: 4.448 on 1 and 160 DF,  p-value: 0.0365
+
+[1] 24
+
+Call:
+lm(formula = data[, 1] ~ IDATA[, i])
+
+Residuals:
+     Min       1Q   Median       3Q      Max
+-0.62139 -0.49098  0.00032  0.48945  0.62204
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)
+(Intercept) 0.064986   0.273515   0.238    0.812
+IDATA[, i]  0.008694   0.005410   1.607    0.110
+
+Residual standard error: 0.4991 on 160 degrees of freedom
+Multiple R-squared:  0.01589,	Adjusted R-squared:  0.009734
+F-statistic: 2.583 on 1 and 160 DF,  p-value: 0.11
+
+[1] 25
+
+Call:
+lm(formula = data[, 1] ~ IDATA[, i])
+
+Residuals:
+     Min       1Q   Median       3Q      Max
+-0.93451 -0.37107 -0.03896  0.42371  0.78193
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)
+(Intercept)  0.03896    0.06331   0.615    0.539
+IDATA[, i]   0.17911    0.02104   8.514 1.16e-14 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4174 on 160 degrees of freedom
+Multiple R-squared:  0.3118,	Adjusted R-squared:  0.3075
+F-statistic: 72.49 on 1 and 160 DF,  p-value: 1.16e-14
+
+[1] 26
+
+Call:
+lm(formula = data[, 1] ~ IDATA[, i])
+
+Residuals:
+     Min       1Q   Median       3Q      Max
+-0.81956 -0.33118 -0.08699  0.42463  0.76650
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)
+(Intercept)  0.08699    0.06106   1.425    0.156
+IDATA[, i]   0.04884    0.00605   8.073 1.55e-13 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4241 on 160 degrees of freedom
+Multiple R-squared:  0.2894,	Adjusted R-squared:  0.285
+F-statistic: 65.17 on 1 and 160 DF,  p-value: 1.554e-13
+
+>

@@ -1,0 +1,190 @@
+library(lmtest)
+library(sandwich)
+
+SIGDATA = read.csv("/Users/mac/Documents/Wordpress/StatsNHL/SIGDATA.csv", header = TRUE, sep = ",")
+
+$creates each ind. model...
+model_PPG. = lm(W ~ PPG, data = SIGDATA)
+model_PP. = lm(W ~ PP., data = SIGDATA)
+model_PPGA = lm(W ~ PPGA, data = SIGDATA)
+model_PK. = lm(W ~ PK., data = SIGDATA)
+model_BKS. = lm(W ~ BKS, data = SIGDATA)
+model_TKA. = lm(W ~ TKA, data = SIGDATA)
+model_S. = lm(W ~ S., data = SIGDATA)
+
+SIGVARS = SIGDATA[,2:length(SIGDATA)]
+
+for(i in 1:7){
+print(i)
+model_i = lm(SIGDATA$W ~ SIGVARS[,i])
+print(resettest(model_i))
+print(bptest(model_i))
+
+print(vcov(model_i))
+print(vcovHC(model_i))
+}
+
+$OUTPUT:
+
+1
+
+	RESET test
+
+data:  model_i
+RESET = 0.19679, df1 = 2, df2 = 158, p-value = 0.8216
+
+
+	studentized Breusch-Pagan test
+
+data:  model_i
+BP = 4.8421, df = 1, p-value = 0.02777
+
+              (Intercept) SIGVARS[, i]
+(Intercept)   0.002289805 -0.001469577
+SIGVARS[, i] -0.001469577  0.002768272
+              (Intercept) SIGVARS[, i]
+(Intercept)   0.002319485 -0.001396754
+SIGVARS[, i] -0.001396754  0.002446448
+[1] 2
+
+	RESET test
+
+data:  model_i
+RESET = 0.50543, df1 = 2, df2 = 158, p-value = 0.6042
+
+
+	studentized Breusch-Pagan test
+
+data:  model_i
+BP = 11.256, df = 1, p-value = 0.0007935
+
+               (Intercept)  SIGVARS[, i]
+(Intercept)   2.270763e-03 -4.699841e-05
+SIGVARS[, i] -4.699841e-05  2.913794e-06
+               (Intercept)  SIGVARS[, i]
+(Intercept)   2.243280e-03 -3.911039e-05
+SIGVARS[, i] -3.911039e-05  2.092650e-06
+[1] 3
+
+	RESET test
+
+data:  model_i
+RESET = 0.19679, df1 = 2, df2 = 158, p-value = 0.8216
+
+
+	studentized Breusch-Pagan test
+
+data:  model_i
+BP = 4.8421, df = 1, p-value = 0.02777
+
+              (Intercept) SIGVARS[, i]
+(Intercept)   0.002289805 -0.001469577
+SIGVARS[, i] -0.001469577  0.002768272
+              (Intercept) SIGVARS[, i]
+(Intercept)   0.002319485 -0.001396754
+SIGVARS[, i] -0.001396754  0.002446448
+[1] 4
+
+	RESET test
+
+data:  model_i
+RESET = 0.017625, df1 = 2, df2 = 158, p-value = 0.9825
+
+
+	studentized Breusch-Pagan test
+
+data:  model_i
+BP = 2.0515, df = 1, p-value = 0.1521
+
+               (Intercept)  SIGVARS[, i]
+(Intercept)   0.0176226034 -1.961645e-04
+SIGVARS[, i] -0.0001961645  2.391710e-06
+               (Intercept)  SIGVARS[, i]
+(Intercept)   0.0171211251 -1.905571e-04
+SIGVARS[, i] -0.0001905571  2.332230e-06
+[1] 5
+
+	RESET test
+
+data:  model_i
+RESET = 1.5108, df1 = 2, df2 = 158, p-value = 0.2239
+
+
+	studentized Breusch-Pagan test
+
+data:  model_i
+BP = 4.1873, df = 1, p-value = 0.04073
+
+               (Intercept)  SIGVARS[, i]
+(Intercept)   0.0143564076 -7.434996e-04
+SIGVARS[, i] -0.0007434996  4.310914e-05
+               (Intercept)  SIGVARS[, i]
+(Intercept)   0.0151907373 -8.051407e-04
+SIGVARS[, i] -0.0008051407  4.752181e-05
+[1] 6
+
+	RESET test
+
+data:  model_i
+RESET = 0.1271, df1 = 2, df2 = 158, p-value = 0.8807
+
+
+	studentized Breusch-Pagan test
+
+data:  model_i
+BP = 2.7441, df = 1, p-value = 0.09761
+
+               (Intercept)  SIGVARS[, i]
+(Intercept)   0.0081887488 -0.0008656241
+SIGVARS[, i] -0.0008656241  0.0001123647
+               (Intercept)  SIGVARS[, i]
+(Intercept)   0.0080360475 -0.0008299743
+SIGVARS[, i] -0.0008299743  0.0001059784
+[1] 7
+
+	RESET test
+
+data:  model_i
+RESET = 3.4149, df1 = 2, df2 = 158, p-value = 0.03533
+
+
+	studentized Breusch-Pagan test
+
+data:  model_i
+BP = 0.020119, df = 1, p-value = 0.8872
+
+               (Intercept)  SIGVARS[, i]
+(Intercept)   0.0037279486 -3.095327e-04
+SIGVARS[, i] -0.0003095327  3.660168e-05
+               (Intercept)  SIGVARS[, i]
+(Intercept)   0.0030455176 -2.344176e-04
+SIGVARS[, i] -0.0002344176  2.852354e-05
+>
+
+> model3 = lm(W ~ exp(S.), data = SIGDATA)
+> resettest(model3)
+
+	RESET test
+
+data:  model3
+RESET = 0.59711, df1 = 2, df2 = 158, p-value = 0.5516
+
+> summary(model3)
+
+Call:
+lm(formula = W ~ exp(S.), data = SIGDATA)
+
+Residuals:
+    Min      1Q  Median      3Q     Max
+-0.4969 -0.4969 -0.2485  0.5031  0.5031
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)
+(Intercept) 4.969e-01  3.953e-02   12.57   <2e-16 ***
+exp(S.)     2.345e-15  2.344e-15    1.00    0.319
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.5015 on 160 degrees of freedom
+Multiple R-squared:  0.006216,	Adjusted R-squared:  4.599e-06
+F-statistic: 1.001 on 1 and 160 DF,  p-value: 0.3186
