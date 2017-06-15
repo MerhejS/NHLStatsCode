@@ -1,0 +1,19 @@
+results1 <- vector("list", 12)
+results2 <- vector("list", 12)
+
+> for(i in 1:12){
++ points <- 0
++ pointsTKA <- dataSCF$TKA[i] * 1
++ pointsPPG <- dataSCF$PPG[i] * 10
++ points <- pointsTKA + pointsPPG
++ results1[i] <- points
++ }
+
+> for(i in 1:12){
++ points <- 0
++ pointsTKA <- dataSCF$TKA[i] * 1
++ pointsPPG <- dataSCF$PPG[i] * 10
++ pointsBKS <- dataSCF$BKS[i] * 0.5
++ points <- pointsTKA + pointsPPG + pointsBKS
++ results2[i] <- points
++ }
